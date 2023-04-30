@@ -11,7 +11,7 @@ export const SearchBar = ({onSearchChange}) => {
     const [search,setSearch] = useState(null);
 
     const loadOptions = (input) => {
-        return fetch(`${geoApiUrl}/cities?minPopulation=1000000&namePrefix=${input}`
+        return fetch(`${geoApiUrl}/cities?namePrefix=${input}`
         ,geoDBApiOptions)
         .then((response)=>response.json())
         .then((response)=>{
@@ -54,16 +54,16 @@ export const SearchBar = ({onSearchChange}) => {
 
 
   return (
-    <div className="text-center" style={{"position":"absolute","marginLeft":"25%","marginTop":"2%","width":"50%"}}>
-        <div className="flex" >
-        <h1 style={{"marginTop":"8%","marginLeft":"16%"}} className="font-semibold text-6xl bg-yellow-500 bg-clip-text text-transparent">Climate Captain</h1>
-        <img src={`icons/01d.png`} alt="sun" style={{"marginBottom":"0%"}}/>
+    <div className="sm:flex sm:ml-[3%] sm:w-[95%] ">
+        <div className="flex sm:ml-0 sm:mt-5" >
+        <h1 className="font-semibold text-6xl bg-yellow-500 bg-clip-text text-center text-transparent">Climate Captain</h1>
+        <img src={`icons/01d.png`} alt="sun" style={{"marginBottom":"5%"}}/>
         </div>
         <br />
         <br />
         <br />
         <br />
-
+        <div className="ml-16 sm:ml-25 sm:mt-16" style={{"width":"70%"}}>
         <AsyncPaginate
         placeholder="Search for a city"
         debounceTimeout={600}
@@ -72,6 +72,7 @@ export const SearchBar = ({onSearchChange}) => {
         loadOptions={loadOptions}
         styles={customStyles}
          />
+         </div>
     </div>
   )
 }

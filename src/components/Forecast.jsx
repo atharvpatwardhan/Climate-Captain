@@ -13,15 +13,15 @@ export const Forecast = ({data}) => {
 
 
   return (
-    <div className='text-white' style={{"marginTop":"50%","marginLeft":"2%","position":"absolute"}}>
+    <div className='text-white mt-[150%] sm:mt-[40%]' style={{"marginLeft":"2%","position":"absolute"}}>
         <br />
 
         <br />
         <br />
-        <div className='flex'>
+        <div className='sm:flex'>
             {data.list.slice(0,7).map((obj,index)=>{
                 return(
-                    <div className='mx-5 rounded-xl shadow-lg bg-gradient-to-b from-blue-700 via-blue-500 to-blue-700' style={{"width":"15%"}} key={index}>
+                    <div className='sm:mx-5 ml-[55%] my-5 sm:my-0 sm:w-[15%] w-full rounded-xl shadow-lg bg-gradient-to-b from-blue-700 via-blue-500 to-blue-700' key={index}>
                         <div style={{"padding":"20px"}}>
                             <h1 className='text-2xl'>{forecastdays[index]}</h1>
                             <img src={`icons/${obj.weather[0].icon}.png`} alt='weather icon' style={{"marginTop":"5%"}}/>

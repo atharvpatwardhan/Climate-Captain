@@ -1,9 +1,12 @@
 .App {
   text-align: center;
-  background-image: url("https://mdbootstrap.com/img/Photos/Others/images/101.jpg");
-  background-repeat: no-repeat;
-  
+  background-color: black;
+  padding-bottom: 50px;
+
 }
+
+/* #282c34 */
+
 
 .mask{
   background-color: rgba(0, 0, 0, 0.5)

@@ -16,10 +16,6 @@ function App() {
   const handleOnSearchChange = (searchData) => {
   const [lat,lon] = searchData.value.split(" ");
 
-  // const lat = searchData.value.lat;
-  // const lon = searchData.value.lon;
-
-  console.log(searchData.value.lat);
   const currentWeatherFetch = fetch(`${weatherUrl}/weather?lat=${lat}&lon=${lon}&appid=${weatherKey}&units=metric`);
   const forecastFetch = fetch(`${weatherUrl}/forecast?lat=${lat}&lon=${lon}&cnt=7&appid=${weatherKey}&units=metric`);
 
@@ -35,20 +31,20 @@ function App() {
   .catch((err)=>console.log(err));
   } 
 
-  console.log(currentWeather);
-  console.log(forecast);
+  // console.log(currentWeather);
+  // console.log(forecast);
 
 //from-blue-700 to-blue-500 from-blue-700 to-blue-500
   return (
-    <div>
-    <div className="App" style={{"height":"1115px"}}>
-      <div className='mask' style={{"height":"1115px"}}>
+    <div className='App sm:h-[1300px] h-[2900px]'>
+    <div className="">
+      <div className='sm:mask'>
       <SearchBar onSearchChange={handleOnSearchChange} />
       {currentWeather && <Weather data={currentWeather} />}
       {forecast && <Forecast data={forecast} />}
+      <Footer />
       </div>
     </div>
-    <Footer />
     </div>
   );
 }
