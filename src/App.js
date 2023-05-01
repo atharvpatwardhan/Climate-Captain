@@ -38,7 +38,7 @@ function App() {
   return (
     <div className='App sm:h-[1300px] h-[2900px]'>
     <div className="">
-      <div className='sm:mask'>
+      <div className='sm:mask sm:h-[1300px] h-[2900px]'>
       <SearchBar onSearchChange={handleOnSearchChange} />
       {currentWeather && <Weather data={currentWeather} />}
       {forecast && <Forecast data={forecast} />}
